@@ -37,8 +37,44 @@
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Label</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
           <widget class="QStackedWidget" name="stackedWidget">
-           <widget class="FormView" name="stackedWidgetPage1_2"/>
+           <property name="currentIndex">
+            <number>2</number>
+           </property>
+           <widget class="FormView" name="form"/>
+           <widget class="HistoryView" name="history"/>
+           <widget class="QWidget" name="page">
+            <widget class="QLabel" name="label_2">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>10</y>
+               <width>72</width>
+               <height>15</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>数据维护</string>
+             </property>
+            </widget>
+           </widget>
           </widget>
          </item>
         </layout>
@@ -60,6 +96,12 @@
    <class>FormView</class>
    <extends>QWidget</extends>
    <header>view.form.form_view.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>HistoryView</class>
+   <extends>QWidget</extends>
+   <header>view.history.history_view.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

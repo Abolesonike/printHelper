@@ -30,21 +30,41 @@ class Ui_main_window(object):
         self.horizontalLayout.addWidget(self.navigationWidget)
         self.verticalLayout_2 = QtWidgets.QVBoxLayout()
         self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.label = QtWidgets.QLabel(self.stackedWidgetPage1)
+        self.label.setMinimumSize(QtCore.QSize(0, 30))
+        self.label.setObjectName("label")
+        self.horizontalLayout_2.addWidget(self.label)
+        self.verticalLayout_2.addLayout(self.horizontalLayout_2)
         self.stackedWidget1 = QtWidgets.QStackedWidget(self.stackedWidgetPage1)
         self.stackedWidget1.setObjectName("stackedWidget1")
-        self.stackedWidgetPage1_2 = FormView()
-        self.stackedWidgetPage1_2.setObjectName("stackedWidgetPage1_2")
-        self.stackedWidget1.addWidget(self.stackedWidgetPage1_2)
+        self.form = FormView()
+        self.form.setObjectName("form")
+        self.stackedWidget1.addWidget(self.form)
+        self.history = HistoryView()
+        self.history.setObjectName("history")
+        self.stackedWidget1.addWidget(self.history)
+        self.page = QtWidgets.QWidget()
+        self.page.setObjectName("page")
+        self.label_2 = QtWidgets.QLabel(self.page)
+        self.label_2.setGeometry(QtCore.QRect(10, 10, 72, 15))
+        self.label_2.setObjectName("label_2")
+        self.stackedWidget1.addWidget(self.page)
         self.verticalLayout_2.addWidget(self.stackedWidget1)
         self.horizontalLayout.addLayout(self.verticalLayout_2)
         self.stackedWidget.addWidget(self.stackedWidgetPage1)
         self.verticalLayout.addWidget(self.stackedWidget)
 
         self.retranslateUi(main_window)
+        self.stackedWidget1.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(main_window)
 
     def retranslateUi(self, main_window):
         _translate = QtCore.QCoreApplication.translate
         main_window.setWindowTitle(_translate("main_window", "Form"))
+        self.label.setText(_translate("main_window", "Label"))
+        self.label_2.setText(_translate("main_window", "数据维护"))
 from compent.widget.navigation_widget import NavigationWidget
-from src.view.form.form_view import FormView
+from view.form.form_view import FormView
+from view.history.history_view import HistoryView

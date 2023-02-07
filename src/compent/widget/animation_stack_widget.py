@@ -1,7 +1,7 @@
 from enum import Enum
 
-from PyQt5.QtCore import  QRectF, Qt
-from PyQt5 import  QtCore
+from PyQt5.QtCore import QRectF, Qt
+from PyQt5 import QtCore
 from PyQt5.QtGui import QPaintEvent, QPainter, QPixmap
 from PyQt5.QtWidgets import QStackedWidget
 
@@ -10,6 +10,7 @@ class AnimationEnum(Enum):
     LeftToRight = 1
     RightToLeft = 2
     Top = 3
+
 
 class AnimationStackWidget(QStackedWidget):
     def __init__(self, parent=None):
@@ -24,13 +25,13 @@ class AnimationStackWidget(QStackedWidget):
         self.animationType = AnimationEnum.LeftToRight
         self.switchArg = {}
 
-    # @QtCore.Property(int)
-    # def value(self):
-    #     return self._value
+    @QtCore.Property(int)
+    def value(self):
+        return self._value
 
-    # @value.setter
-    # def value(self, value):
-    #     self._value = value
+    @value.setter
+    def value(self, value):
+        self._value = value
 
     def ValueChanged(self, value):
         self.currentValue = value
@@ -52,7 +53,7 @@ class AnimationStackWidget(QStackedWidget):
         r = w.geometry()
         value = self.currentValue
         r1 = QRectF(0.0, 0.0, value, r.height())
-        r2 = QRectF((r.width()-value), 0, value, r.height())
+        r2 = QRectF((r.width() - value), 0, value, r.height())
         paint.drawPixmap(r1, pixmap, r2)
 
     def SwitchWidgetByIndex(self, index, **kwargs):
@@ -91,12 +92,12 @@ class AnimationStackWidget(QStackedWidget):
         w.render(pixmap)
 
         value = self.currentValue
-        r1 = QRectF(value, 0.0, (r.width()-value), r.height())
-        r2 = QRectF(0.0, 0.0, (r.width()-value), r.height())
+        r1 = QRectF(value, 0.0, (r.width() - value), r.height())
+        r2 = QRectF(0.0, 0.0, (r.width() - value), r.height())
         paint.drawPixmap(r1, pixmap, r2)
 
     def paintEvent(self, event: QPaintEvent) -> None:
-        if self.animation.state() == QPropertyAnimation.State.Running:
+        if self.animation.state() == QtCore.QPropertyAnimation.State.Running:
             paint = QPainter(self)
             paint.setRenderHints(QPainter.Antialiasing | QPainter.SmoothPixmapTransform)
             if self.animationType == AnimationEnum.LeftToRight:
