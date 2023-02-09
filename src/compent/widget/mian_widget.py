@@ -24,10 +24,12 @@ class MainWidget(QWidget, Ui_main_window):
         self.subStackWidget.subStackList = value
 
     def __initWidget(self):
-        self.navigationWidget.edit_btn.clicked.connect(
+        self.navigationWidget.editBtn.clicked.connect(
             partial(self.SwitchWidget, self.stackedWidget.indexOf(self.form)))
-        self.navigationWidget.hsitory_btn.clicked.connect(
+        self.navigationWidget.historyBtn.clicked.connect(
             partial(self.SwitchWidget, self.stackedWidget.indexOf(self.history)))
+        self.navigationWidget.dataBtn.clicked.connect(
+            partial(self.SwitchWidget, self.stackedWidget.indexOf(self.data)))
         self.stackedWidget1.setCurrentIndex(0)
 
 

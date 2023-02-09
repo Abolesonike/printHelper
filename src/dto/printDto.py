@@ -1,0 +1,3 @@
+class printDto():
+    name = ""
+    phone = ""

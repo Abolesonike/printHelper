@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>196</width>
-    <height>300</height>
+    <width>434</width>
+    <height>334</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <item>
     <widget class="QWidget" name="widget" native="true">
      <layout class="QVBoxLayout" name="verticalLayout_2">
-      <item>
+      <item alignment="Qt::AlignTop">
        <widget class="QScrollArea" name="scrollArea">
         <property name="widgetResizable">
          <bool>true</bool>
@@ -30,13 +30,13 @@
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>158</width>
-           <height>262</height>
+           <width>388</width>
+           <height>156</height>
           </rect>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_3">
           <item>
-           <widget class="QToolButton" name="edit_btn">
+           <widget class="QToolButton" name="editBtn">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -55,7 +55,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QToolButton" name="hsitory_btn">
+           <widget class="QToolButton" name="historyBtn">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -74,7 +74,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QToolButton" name="toolButton_3">
+           <widget class="QToolButton" name="dataBtn">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
               <horstretch>0</horstretch>
